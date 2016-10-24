@@ -1,0 +1,40 @@
+
+.navbar-default {
+    background-color: #563d7c;
+    border-color: #563d7c;
+}
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  font-size: 125%;
+}
+
+header{
+  position: relative;
+  height: 150px;
+}
+
+.home{
+  position: relative;
+}
+
+h1.home{
+  font-size: 5em;
+  text-align: center;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+h4.home{
+  /*text-align: center;*/
+  font-family: 'Inconsolata', monospace;
+  margin-left: 18em;
+  margin-right: 18em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  line-height: 150%;
+}
+
+#start{
+  margin-left: 18em;
+  background-color: #563d7c;
+  border-color: #563d7c;
+}

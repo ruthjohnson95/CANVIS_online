@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>CANVIS-online-Plot</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="static/style.css">
+    
+  </head>
+
+  <body>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Pathway+Gothic+One" rel="stylesheet">
+
+<header>
+  <nav class="navbar navbar-default">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('plot') }}">Plot</a></li>
+          <li><a href="{{ url_for('docs') }}">Docs</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+
+
+<div class="container">
+ 
+ 
+  <h2>PAINTOR CAN-viz</h2>
+  <form  action="" method="post" role="form">
+    {{ form.csrf }}
+    <div class="form-group">
+      <label for="post">Threshold</label>
+      <input type="text" class="form-control" id="threshold" name="threshold" placeholder="99">
+      <br>
+      <!--<label for="LD">LD:</label>
+      <input type="text" class="form-control" id="LD" name="LD" placeholder="LD file">
+      <br>
+      <label for="annot">Annotations:</label>
+      <input type="text" class="form-control" id="annot" name="annot" placeholder="Annotation file"> -->
+ 
+  <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+ 
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                <strong>Success! </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+ 
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1] }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+      <input type=file name=post>
+      <input type=file name=LD>
+      <input type=file name=annot>
+  </div>
+    <button type="submit" class="btn btn-success">Plot</button>
+  </form>
+
+<footer>
+  <p>Created by Ruthie Johnson</p>
+</footer>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+    
+  </body>
+</html>
