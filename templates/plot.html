@@ -31,49 +31,26 @@
   </nav>
 </header>
 
-
-<div class="container">
- 
- 
-  <h2>PAINTOR CAN-viz</h2>
-  <form  action="" method="post" role="form">
-    {{ form.csrf }}
-    <div class="form-group">
-      <label for="post">Threshold</label>
-      <input type="text" class="form-control" id="threshold" name="threshold" placeholder="99">
-      <br>
-      <!--<label for="LD">LD:</label>
-      <input type="text" class="form-control" id="LD" name="LD" placeholder="LD file">
-      <br>
-      <label for="annot">Annotations:</label>
-      <input type="text" class="form-control" id="annot" name="annot" placeholder="Annotation file"> -->
- 
-  <br>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
- 
-        {% for message in messages %}
-            {% if "Error" not in message[1]: %}
-                <div class="alert alert-info">
-                <strong>Success! </strong> {{ message[1] }}
-                </div>
-            {% endif %}
- 
-            {% if "Error" in message[1]: %}
-                <div class="alert alert-warning">
-                {{ message[1] }}
-                </div>
-            {% endif %}
-        {% endfor %}
-            {% endif %}
-        {% endwith %}
-
-      <input type=file name=post>
-      <input type=file name=LD>
-      <input type=file name=annot>
-  </div>
-    <button type="submit" class="btn btn-success">Plot</button>
-  </form>
+  <form action="" method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=file name=file2>
+      <input type=file name=file3>
+      <input type=submit value=Upload>
+    </form>
+  
+  <!--<div class="form-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Options</div>
+      <div class="panel-body">
+        <label for="email">Interval (opt)</label>
+        <input type="email" class="form-control" id="email">
+        <label><input type="checkbox"> Greyscale</label>
+      </div>
+     </div>
+  </div>-->
+  
+ <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+</form>
 
 <footer>
   <p>Created by Ruthie Johnson</p>

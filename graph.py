@@ -377,15 +377,6 @@ def run_canvis(locus_fname, ld_fname, annotations_fname):
     else:
         annotation_plot = None
 
-    #remove extraneous files
-    if heatmap is not None:
-        os.remove('heatmap.svg')
-        os.remove('colorbar.svg')
-    os.remove('stats_plot.svg')
-    if annotation_plot is not None:
-        os.remove('annotation_plot.svg')
-    os.remove('value_plots.svg')
-
     return Assemble_Figure(stats_plot, value_plots, heatmap, annotation_plot, output)
 
 
